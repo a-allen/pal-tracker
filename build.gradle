@@ -74,7 +74,7 @@ bootRun.environment([
         "MANAGEMENT_SECURITY_ENABLED" : false,
 ])
 
-def testDbUrl = "jdbc:mysql://localhost:8889/tracker_test?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
+def testDbUrl = "jdbc:mysql://localhost:8889/tracker_dev?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
         "SPRING_DATASOURCE_URL": testDbUrl,
@@ -83,7 +83,7 @@ test.environment([
 
 flyway {
     url = developmentDbUrl
-    user = "tracker"
+    user = "root"
     password = ""
     locations = ["filesystem:databases/tracker/migrations"]
 }
